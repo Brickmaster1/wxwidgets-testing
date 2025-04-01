@@ -1,6 +1,0 @@
-{
-    wxwidgets = {
-        __requirestr = "wxwidgets",
-        __enabled = false
-    }
-}
