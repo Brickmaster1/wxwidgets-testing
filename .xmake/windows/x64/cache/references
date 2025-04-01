@@ -1,0 +1,14 @@
+{
+    packages = {
+        [[X:\.xmake\packages\c\cmake\3.26.4\ef70bb854bb24353be6d6d07184f9fd5]],
+        [[X:\.xmake\packages\z\zlib-ng\2.2.2\8297e55548fa4250825d35294b956869]],
+        [[X:\.xmake\packages\n\nasm\2.16.03\0ba0c2fad78f4ad6aeaab653f9ccf2ff]],
+        [[X:\.xmake\packages\l\libjpeg-turbo\3.1.0\14a8eacfb9cb4e8a9931a4f6f49a4bf9]],
+        [[X:\.xmake\packages\l\libpng\v1.6.47\95023c05fc2e4f1f8e07e5527c06ca78]],
+        [[X:\.xmake\packages\n\nanosvg\2022.07.09\98db7a9929294798a23e7efe47482dc9]],
+        [[X:\.xmake\packages\o\opengl\latest\c858331d6d7045f2a4e7005f32c2f542]],
+        [[X:\.xmake\packages\p\pcre2\10.44\65202dac61774b6d92bf495e19d05c4d]],
+        [[X:\.xmake\packages\l\libtiff\v4.7.0\0a92ea6cf8534583b1bbf5dd32f6a51c]],
+        [[X:\.xmake\packages\w\wxwidgets\3.2.5\ebddad73bdd14c3a840a1d542eb9e525]]
+    }
+}

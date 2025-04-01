@@ -1,0 +1,720 @@
+{
+    ["tool_package_table: 0x55c5e36e2060_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e377a850_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e3a9aa70_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    zig_arch_x86_64_plat_linux = {
+        toolset_ranlib = "/tmp/.xmake1000/250310/zigcc/ranlib",
+        toolset_objcopy = "/tmp/.xmake1000/250310/zigcc/objcopy",
+        zig = "/usr/local/bin/zig",
+        ["toolset_c++"] = "zig_cc@/tmp/.xmake1000/250310/zigcc/c++",
+        __global = true,
+        __checked = true,
+        zig_version = "0.13.0",
+        arch = "x86_64",
+        toolset_ar = "/tmp/.xmake1000/250310/zigcc/ar",
+        toolset_cc = "zig_cc@/tmp/.xmake1000/250310/zigcc/cc",
+        plat = "linux"
+    },
+    ["tool_package_table: 0x55c5e369e780_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    cuda_arch_x86_64_plat_linux = {
+        __checked = true,
+        arch = "x86_64",
+        __global = true,
+        plat = "linux"
+    },
+    ["tool_package_table: 0x55c5e3a9aa70_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e3961210_linux_x86_64_sh"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e34d3f60_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e38f35d0_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    nim_arch_x86_64_plat_linux = {
+        __checked = false,
+        arch = "x86_64",
+        __global = true,
+        plat = "linux"
+    },
+    fpc_arch_x86_64_plat_linux = {
+        __checked = true,
+        arch = "x86_64",
+        __global = true,
+        plat = "linux"
+    },
+    ["tool_package_table: 0x55c5e3afc180_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e36b3860_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e3bb7ac0_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e30c0e80_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e3528e40_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e3a5bed0_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    gfortran_arch_x86_64_plat_linux = {
+        __checked = true,
+        arch = "x86_64",
+        __global = true,
+        plat = "linux"
+    },
+    ["tool_package_table: 0x55c5e3c03670_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    tool_platform_linux_x86_64_cc = {
+        toolname = "gcc",
+        program = "/usr/bin/gcc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "gcc",
+            cachekey = "gcc_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e377a850_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e36e2060_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e38f6420_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e369e780_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e30c0e80_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e35a33b0_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e3961210_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    tool_platform_linux_x86_64_ld = {
+        toolname = "gxx",
+        program = "/usr/bin/g++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "gcc",
+            cachekey = "gcc_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e340e230_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e3c81ea0_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e3257b60_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e3c03670_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e370e010_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e38657a0_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    yasm_arch_x86_64_plat_linux = {
+        __checked = true,
+        arch = "x86_64",
+        __global = true,
+        plat = "linux"
+    },
+    gcc_arch_x86_64_plat_linux = {
+        __checked = {
+            program = "/usr/bin/gcc",
+            name = "gcc"
+        },
+        arch = "x86_64",
+        __global = true,
+        plat = "linux"
+    },
+    ["tool_package_table: 0x55c5e3b0a090_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e3c81ea0_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e3528e40_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e3bb7ac0_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e36fc370_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e3961210_linux_x86_64_ar"] = {
+        toolname = "ar",
+        program = "/tmp/.xmake1000/250310/zigcc/ar",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e3961210_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e370ead0_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e370ead0_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    rust_arch_x86_64_plat_linux = {
+        __checked = true,
+        arch = "x86_64",
+        __global = true,
+        plat = "linux"
+    },
+    ["tool_package_table: 0x55c5e38657a0_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e39a0300_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    go_arch_x86_64_plat_linux = {
+        __checked = true,
+        arch = "x86_64",
+        __global = true,
+        plat = "linux"
+    },
+    ["tool_package_table: 0x55c5e36a3880_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e3a5bed0_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    swift_arch_x86_64_plat_linux = {
+        __checked = true,
+        arch = "x86_64",
+        __global = true,
+        plat = "linux"
+    },
+    ["tool_package_table: 0x55c5e3afc180_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e340e230_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e3961210_linux_x86_64_as"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    tool_target_test_linux_x86_64_cxx = {
+        toolname = "gcc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "cross",
+            cachekey = "cross_arch_x86_64_plat_linux",
+            plat = "linux"
+        },
+        program = "/usr/bin/gcc"
+    },
+    ["tool_package_table: 0x55c5e3b0a090_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e39a0300_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e37ced70_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e38f35d0_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e34d3f60_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e3961210_linux_x86_64_ranlib"] = {
+        toolname = "ranlib",
+        program = "/tmp/.xmake1000/250310/zigcc/ranlib",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    nasm_arch_x86_64_plat_linux = {
+        __checked = true,
+        arch = "x86_64",
+        __global = true,
+        plat = "linux"
+    },
+    ["tool_package_table: 0x55c5e370e010_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e35d09d0_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    envs_arch_x86_64_plat_linux = {
+        __checked = true,
+        arch = "x86_64",
+        __global = true,
+        plat = "linux"
+    },
+    ["tool_package_table: 0x55c5e35a33b0_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    fasm_arch_x86_64_plat_linux = {
+        __checked = true,
+        arch = "x86_64",
+        __global = true,
+        plat = "linux"
+    },
+    ["tool_package_table: 0x55c5e36a3880_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e37ced70_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e35d09d0_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e36fc370_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e3257b60_linux_x86_64_ld"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e3961210_linux_x86_64_cxx"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/c++",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    },
+    ["tool_package_table: 0x55c5e38f6420_linux_x86_64_cc"] = {
+        toolname = "zig_cc",
+        program = "/tmp/.xmake1000/250310/zigcc/cc",
+        toolchain_info = {
+            arch = "x86_64",
+            name = "zig",
+            cachekey = "zig_arch_x86_64_plat_linux",
+            plat = "linux"
+        }
+    }
+}

@@ -1,0 +1,203 @@
+{
+    go_arch_x64_plat_msys = {
+        __checked = true,
+        plat = "msys",
+        arch = "x64"
+    },
+    gcc_arch_x64_plat_msys = {
+        __checked = {
+            program = "gcc",
+            name = "gcc"
+        },
+        plat = "msys",
+        arch = "x64"
+    },
+    yasm_arch_x64_plat_msys = {
+        __checked = true,
+        plat = "msys",
+        arch = "x64"
+    },
+    tool_target_test_windows_x64_ld = {
+        toolname = "link",
+        toolchain_info = {
+            cachekey = "msvc_arch_x64_plat_windows",
+            name = "msvc",
+            plat = "windows",
+            arch = "x64"
+        },
+        program = [[C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\bin\HostX64\x64\link.exe]]
+    },
+    ["tool_package_table: 000002314588D9B0_mingw_x86_64_ranlib"] = {
+        toolchain_info = {
+            cachekey = "zig_arch_x86_64_plat_mingw",
+            name = "zig",
+            plat = "mingw",
+            arch = "x86_64"
+        },
+        program = [[C:\Users\LOGANH~1\AppData\Local\Temp\.xmake\250331\zigcc\ranlib.cmd]]
+    },
+    ["tool_package_table: 000002314588D9B0_mingw_x86_64_ld"] = {
+        toolchain_info = {
+            cachekey = "zig_arch_x86_64_plat_mingw",
+            name = "zig",
+            plat = "mingw",
+            arch = "x86_64"
+        },
+        program = [[C:\Users\LOGANH~1\AppData\Local\Temp\.xmake\250331\zigcc\c++.cmd]],
+        toolname = "zig_cc"
+    },
+    tool_target_test_windows_x64_cc = {
+        toolname = "cl",
+        toolchain_info = {
+            cachekey = "msvc_arch_x64_plat_windows",
+            name = "msvc",
+            plat = "windows",
+            arch = "x64"
+        },
+        program = [[C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\bin\HostX64\x64\cl.exe]]
+    },
+    ["tool_package_table: 000002314588D9B0_mingw_x86_64_sh"] = {
+        toolchain_info = {
+            cachekey = "zig_arch_x86_64_plat_mingw",
+            name = "zig",
+            plat = "mingw",
+            arch = "x86_64"
+        },
+        program = [[C:\Users\LOGANH~1\AppData\Local\Temp\.xmake\250331\zigcc\c++.cmd]],
+        toolname = "zig_cc"
+    },
+    tool_platform_mingw_x86_64_ld = {
+        toolchain_info = {
+            cachekey = "zig_arch_x86_64_plat_mingw",
+            name = "zig",
+            plat = "mingw",
+            arch = "x86_64"
+        },
+        program = [[C:\Users\LOGANH~1\AppData\Local\Temp\.xmake\250331\zigcc\c++.cmd]],
+        toolname = "zig_cc"
+    },
+    envs_arch_x64_plat_msys = {
+        __checked = true,
+        plat = "msys",
+        arch = "x64"
+    },
+    ["tool_package_table: 000002314588D9B0_mingw_x86_64_as"] = {
+        toolchain_info = {
+            cachekey = "zig_arch_x86_64_plat_mingw",
+            name = "zig",
+            plat = "mingw",
+            arch = "x86_64"
+        },
+        program = [[C:\Users\LOGANH~1\AppData\Local\Temp\.xmake\250331\zigcc\cc.cmd]],
+        toolname = "zig_cc"
+    },
+    tool_platform_mingw_x86_64_cc = {
+        toolchain_info = {
+            cachekey = "zig_arch_x86_64_plat_mingw",
+            name = "zig",
+            plat = "mingw",
+            arch = "x86_64"
+        },
+        program = [[C:\Users\LOGANH~1\AppData\Local\Temp\.xmake\250331\zigcc\cc.cmd]],
+        toolname = "zig_cc"
+    },
+    ["tool_package_table: 000002314588D9B0_mingw_x86_64_cxx"] = {
+        toolchain_info = {
+            cachekey = "zig_arch_x86_64_plat_mingw",
+            name = "zig",
+            plat = "mingw",
+            arch = "x86_64"
+        },
+        program = [[C:\Users\LOGANH~1\AppData\Local\Temp\.xmake\250331\zigcc\c++.cmd]],
+        toolname = "zig_cc"
+    },
+    ["tool_package_table: 000002314588D9B0_mingw_x86_64_ar"] = {
+        toolchain_info = {
+            cachekey = "zig_arch_x86_64_plat_mingw",
+            name = "zig",
+            plat = "mingw",
+            arch = "x86_64"
+        },
+        program = [[C:\Users\LOGANH~1\AppData\Local\Temp\.xmake\250331\zigcc\ar.cmd]]
+    },
+    ["tool_package_table: 000002314588D9B0_mingw_x86_64_cc"] = {
+        toolchain_info = {
+            cachekey = "zig_arch_x86_64_plat_mingw",
+            name = "zig",
+            plat = "mingw",
+            arch = "x86_64"
+        },
+        program = [[C:\Users\LOGANH~1\AppData\Local\Temp\.xmake\250331\zigcc\cc.cmd]],
+        toolname = "zig_cc"
+    },
+    tool_target_test_windows_x64_cxx = {
+        toolname = "cl",
+        toolchain_info = {
+            cachekey = "msvc_arch_x64_plat_windows",
+            name = "msvc",
+            plat = "windows",
+            arch = "x64"
+        },
+        program = [[C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\bin\HostX64\x64\cl.exe]]
+    },
+    msvc_arch_x64_plat_windows = {
+        vs = "2022",
+        __global = true,
+        vcvars = {
+            LIB = [[C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\lib\x64;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\lib\um\x64;C:\Program Files (x86)\Windows Kits\10\lib\10.0.22621.0\ucrt\x64;C:\Program Files (x86)\Windows Kits\10\\lib\10.0.22621.0\\um\x64]],
+            PATH = [[C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\bin\HostX64\x64;C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\VC\VCPackages;C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\TestWindow;C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\bin\Roslyn;C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\x64\;C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\\x64;C:\Program Files (x86)\Windows Kits\10\bin\\x64;C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\\MSBuild\Current\Bin\amd64;C:\Windows\Microsoft.NET\Framework64\v4.0.30319;C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\Tools\;C:\Users\Logan Hunt\AppData\Local\.xmake\packages\c\cmake\3.29.2\ae2ca291915949809139117c15e1db8a\bin;C:\Program Files\Lapce\;C:\Program Files\Microsoft MPI\Bin\;C:\Python312\Scripts\;C:\Python312\;C:\Program Files\Microsoft\jdk-11.0.16.101-hotspot\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Oculus\Support\oculus-runtime;C:\Program Files\Python39\Scripts\;C:\Program Files\Python39\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;C:\Windows\platform-tools_r33.0.1-windows;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Eclipse Foundation\jdk-16.0.2.7-hotspot;C:\Program Files (x86)\Incredibuild;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\dev\vcpkg\;C:\Users\Logan Hunt\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\dev;C:\Program Files\CMake\bin;C:\Qt\6.6.1\mingw_64\bin;C:\Program Files\Git\cmd;C:\dev\gslang\bin;C:\Program Files\GraalVM\graalvm-jdk-17.0.10+11.1\bin;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\msys64\mingw64\bin;C:\Program Files (x86)\WinMerge;C:\msys64\usr\bin;C:\ChatRTX\env_nvd_rag\Lib\site-packages\torch\lib;C:\Program Files\xmake;C:\Program Files\Docker\Docker\resources\bin;C:\Users\Logan Hunt\.cargo\bin;C:\Users\Logan Hunt\AppData\Local\Microsoft\WindowsApps;C:\Users\Logan Hunt\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Logan Hunt\.dotnet\tools;C:\Users\Logan Hunt\AppData\Local\spicetify;C:\Program Files\JetBrains\PyCharm Community Edition 2022.2.1\bin;C:\Users\Logan Hunt\AppData\Roaming\npm;C:\Users\Logan Hunt\AppData\Local\JetBrains\Toolbox\scripts;C:\Program Files\JetBrains\JetBrains Gateway 2023.3.4\bin;C:\Users\Logan Hunt\AppData\Local\gitkraken\bin;C:\Users\Logan Hunt\AppData\Local\GitHubDesktop\bin;C:\Program Files\Neovim\bin;C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin;C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\Ninja;C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\VC\Linux\bin\ConnectionManagerExe]],
+            VSCMD_ARG_app_plat = "Desktop",
+            INCLUDE = [[C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\include;C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\VS\include;C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\ucrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\um;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\shared;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\winrt;C:\Program Files (x86)\Windows Kits\10\\include\10.0.22621.0\\cppwinrt;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um]],
+            UCRTVersion = "10.0.22621.0",
+            VCToolsInstallDir = [[C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\]],
+            VSInstallDir = [[C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\]],
+            VS170COMNTOOLS = [[C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\Tools\]],
+            WindowsLibPath = [[C:\Program Files (x86)\Windows Kits\10\UnionMetadata\10.0.22621.0;C:\Program Files (x86)\Windows Kits\10\References\10.0.22621.0]],
+            ExtensionSdkDir = [[C:\Program Files (x86)\Microsoft SDKs\Windows Kits\10\ExtensionSDKs]],
+            WindowsSdkVerBinPath = [[C:\Program Files (x86)\Windows Kits\10\bin\10.0.22621.0\]],
+            LIBPATH = [[C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\lib\x64;C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Tools\MSVC\14.39.33519\lib\x86\store\references;C:\Program Files (x86)\Windows Kits\10\UnionMetadata\10.0.22621.0;C:\Program Files (x86)\Windows Kits\10\References\10.0.22621.0;C:\Windows\Microsoft.NET\Framework64\v4.0.30319]],
+            WindowsSdkDir = [[C:\Program Files (x86)\Windows Kits\10\]],
+            UniversalCRTSdkDir = [[C:\Program Files (x86)\Windows Kits\10\]],
+            VSCMD_ARG_HOST_ARCH = "x64",
+            DevEnvdir = [[C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\]],
+            VisualStudioVersion = "17.0",
+            VCToolsVersion = "14.39.33519",
+            VCIDEInstallDir = [[C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\VC\]],
+            VSCMD_ARG_TGT_ARCH = "x64",
+            VCInstallDir = [[C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\]],
+            WindowsSDKVersion = "10.0.22621.0",
+            WindowsSdkBinPath = [[C:\Program Files (x86)\Windows Kits\10\bin\]],
+            VCToolsRedistDir = [[C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Redist\MSVC\14.38.33135\]],
+            VSCMD_VER = "17.9.6"
+        },
+        __checked = "2022",
+        plat = "windows",
+        arch = "x64",
+        vs_toolset = "14.39.33519",
+        vs_sdkver = "10.0.22621.0",
+        vcarchs = {
+            "arm64",
+            "x64",
+            "x86"
+        }
+    },
+    gfortran_arch_x64_plat_msys = {
+        __checked = true,
+        plat = "msys",
+        arch = "x64"
+    },
+    zig_arch_x86_64_plat_mingw = {
+        toolset_cc = [[zig_cc@C:\Users\LOGANH~1\AppData\Local\Temp\.xmake\250331\zigcc\cc.cmd]],
+        toolset_ar = [[C:\Users\LOGANH~1\AppData\Local\Temp\.xmake\250331\zigcc\ar.cmd]],
+        toolset_rc = [[C:\Users\LOGANH~1\AppData\Local\Temp\.xmake\250331\zigcc\rc.cmd]],
+        ["toolset_c++"] = [[zig_cc@C:\Users\LOGANH~1\AppData\Local\Temp\.xmake\250331\zigcc\c++.cmd]],
+        zig = "zig",
+        toolset_objcopy = [[C:\Users\LOGANH~1\AppData\Local\Temp\.xmake\250331\zigcc\objcopy.cmd]],
+        plat = "mingw",
+        arch = "x86_64",
+        __checked = true,
+        __global = true,
+        toolset_ranlib = [[C:\Users\LOGANH~1\AppData\Local\Temp\.xmake\250331\zigcc\ranlib.cmd]],
+        zig_version = "0.13.0"
+    }
+}
