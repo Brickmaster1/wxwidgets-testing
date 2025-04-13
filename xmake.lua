@@ -15,9 +15,11 @@ if is_mode("release") then
     set_strip("all")
 end
 
+set_toolset("mrc", "zig rc")
+
 add_repositories("overrides overrides")
 
-add_requires("wxwidgets")
+add_requires("wxwidgets", {debug = true})
 
 target("test")
     set_kind("binary")
@@ -26,4 +28,8 @@ target("test")
     add_includedirs("src")
     add_packages("wxwidgets")
     add_cxxflags("-static", {force = true})
+    -- add_cxxflags("-fno-inline-functions", {force = true})
+    if is_os("windows") then
+        add_files("resources/windows/**.rc")
+    end
 target_end()

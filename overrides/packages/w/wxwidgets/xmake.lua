@@ -10,11 +10,13 @@ package("wxwidgets")
         add_versions("3.2.3", "c170ab67c7e167387162276aea84e055ee58424486404bba692c401730d1a67a")
         add_versions("3.2.4", "0640e1ab716db5af2ecb7389dbef6138d7679261fbff730d23845ba838ca133e")
         add_versions("3.2.5", "0ad86a3ad3e2e519b6a705248fc9226e3a09bbf069c6c692a02acf7c2d1c6b51")
+        add_versions("3.2.6", "939e5b77ddc5b6092d1d7d29491fe67010a2433cf9b9c0d841ee4d04acb9dce7")
+        add_versions("3.2.7", "69a1722f874d91cd1c9e742b72df49e0fab02890782cf794791c3104cee868c6")
 
-        add_deps("cmake 3.26.4")
+        add_deps("cmake")
 
         add_deps("zlib-ng", {configs = {zlib_compat = true}})
-        add_deps("expat", "libjpeg-turbo", "libpng", "nanosvg", "opengl", "pcre2")
+        add_deps("expat", "libjpeg-turbo", "libpng", "nanosvg", "opengl", "pcre2", {system = false})
 
         if is_plat("linux", "macosx") then
             add_deps("pango", "glib")
@@ -39,13 +41,8 @@ package("wxwidgets")
         )
     elseif is_plat("mingw") then
         add_defines("__WXMSW__")
-        add_links(
-            "wxbase32u", "wxbase32u_net", "wxbase32u_xml", --[["wxexpat",]]
-            --[["wxjpeg",]] "wxmsw32u_adv", "wxmsw32u_aui", "wxmsw32u_core", "wxmsw32u_gl",
-            "wxmsw32u_html", "wxmsw32u_media", "wxmsw32u_propgrid", "wxmsw32u_qa", "wxmsw32u_ribbon",
-            "wxmsw32u_richtext", "wxmsw32u_stc", "wxmsw32u_webview", "wxmsw32u_xrc",
-            --[["wxpng",]] "wxregexu", "wxscintilla"--[[, "wxtiff",]] --[["wxzlib"]]
-        )
+        add_syslinks("kernel32", "user32", "gdi32", "comdlg32", "winspool", "winmm", "shell32", "shlwapi", "comctl32", "ole32", "oleaut32",
+                     "uuid", "rpcrt4", "advapi32", "version", "ws2_32", "wininet", "oleacc", "uxtheme")
     end
 
     on_load(function (package)
@@ -53,16 +50,6 @@ package("wxwidgets")
             local version = package:version()
             local suffix = version:major() .. "." .. version:minor()
             local static = package:config("shared") and "" or "-static"
-
-            -- if package:is_plat("macosx") then
-            --     package:add("includedirs", path.join("lib", "wx", "include", "osx_cocoa-unicode" .. static .. "-" .. suffix))
-            -- elseif package:is_plat("linux") then
-            --     package:add("includedirs", path.join("lib", "wx", "include", "gtk3-unicode" .. static .. "-" .. suffix))
-            -- elseif package:is_plat("mingw") then
-            --     package:add("includedirs", path.join("lib", "wx", "include", "msw-unicode" .. static .. "-" .. suffix))
-            -- end
-
-            -- package:add("includedirs", path.join("include", "wx-" .. suffix))
 
             if package:is_plat("macosx") then
                 package:add("includedirs", path.join("lib", "wx", "config", "osx_cocoa-unicode" .. static .. "-" .. suffix))
@@ -72,7 +59,7 @@ package("wxwidgets")
                 package:add("includedirs", path.join("lib", "wx", "config", "msw-unicode" .. static .. "-" .. suffix))
             end
 
-            package:add("includedirs", path.join("include"))
+            package:add("includedirs", path.join("include", "wx-" .. suffix))
             
             if package:debug() then
                 package:add("defines", "wxDEBUG_LEVEL=2")
@@ -111,10 +98,12 @@ package("wxwidgets")
 
         io.replace("build/cmake/modules/FindGTK3.cmake", "FIND_PACKAGE_HANDLE_STANDARD_ARGS(GTK3 DEFAULT_MSG GTK3_INCLUDE_DIRS GTK3_LIBRARIES VERSION_OK)", 
                                                          [[FIND_PACKAGE_HANDLE_STANDARD_ARGS(GTK3 DEFAULT_MSG GTK3_INCLUDE_DIRS GTK3_LIBRARY_DIRS GTK3_LIBRARIES VERSION_OK)]], {plain = true})
-        local configs = {"-DwxBUILD_TESTS=OFF",
+        local configs = {"-DwxBUILD_CXX_STANDARD=20",
+                         "-DwxUSE_UNICODE=ON",
+                         "-DwxBUILD_TESTS=OFF",
                          "-DwxBUILD_SAMPLES=OFF",
                          "-DwxBUILD_DEMOS=OFF",
-                         "-DwxBUILD_PRECOMP=OFF",
+                         "-DwxBUILD_PRECOMP=ON",
                          "-DwxBUILD_BENCHMARKS=OFF",
                          "-DwxUSE_REGEX=sys",
                          "-DwxUSE_ZLIB=sys",
@@ -131,18 +120,10 @@ package("wxwidgets")
         end
         table.insert(configs, "-DBUILD_SHARED_LIBS=" .. (package:config("shared") and "ON" or "OFF"))
 
-        if package:is_plat("mingw") then
-            -- local zig_base = "C:/Users/Logan Hunt/AppData/Local/Microsoft/WinGet/Packages/zig.zig_Microsoft.Winget.Source_8wekyb3d8bbwe/zig-windows-x86_64-0.13.0"
-            -- table.insert(configs, "-DCMAKE_CXX_FLAGS=-nostdinc++ -isystem " .. zig_base .. "/lib/libcxx/include -isystem " .. zig_base .. "/lib/libcxxabi/include")
-            -- table.insert(configs, "-DCMAKE_C_FLAGS=-nostdinc++ -isystem " .. zig_base .. "/lib/libcxx/include -isystem " .. zig_base .. "/lib/libcxxabi/include")
-            -- table.insert(configs, "-DCMAKE_EXE_LINKER_FLAGS=-fuse-ld=lld")
-            -- table.insert(configs, "-DCMAKE_SHARED_LINKER_FLAGS=-fuse-ld=lld")
-        end
-
         import("package.tools.cmake").install(package, configs)
         local version = package:version()
-        -- local subdir = "wx-" .. version:major() .. "." .. version:minor()
         local subdir = "wx-" .. version:major() .. "." .. version:minor()
+        
         local setupdir
         if package:is_plat("macosx") then
             setupdir = "osx"
@@ -152,28 +133,26 @@ package("wxwidgets")
             setupdir = "msw"
         end
 
-        -- os.cp(path.join(package:installdir("include", subdir, "wx", setupdir, "setup.h")),
-        --     path.join(package:installdir("include", subdir, "wx")))
-        os.cp(path.join(package:installdir("lib", "clang_x64_lib", "mswu", "wx", "setup.h")),
-            path.join(package:installdir("include", "wx")))
-        os.cp(path.join(package:installdir("lib", "clang_x64_lib", "*.a")),
-            path.join(package:installdir("lib")))
-        os.rm(path.join(package:installdir("lib", "clang_x64_lib")))
-
+        if import("core.base.semver").satisfies(version:major() .. "." .. version:minor() .. "." .. version:patch(), "<3.2.7") then
+            os.cp(path.join(package:installdir("include", subdir, "wx", setupdir, "setup.h")),
+                  path.join(package:installdir("include", subdir, "wx")))
+        else
+            os.cp(path.join(package:cachedir(), "source", "include", "wx", setupdir, "setup.h"),
+                  path.join(package:installdir("include", subdir, "wx")))
+        end
+        
         local lib_suffix = version:major() .. "." .. version:minor()
         if package:is_plat("linux") then
             package:add("links", "wx_gtk3u_xrc-" .. lib_suffix, "wx_gtk3u_html-" .. lib_suffix, "wx_gtk3u_qa-" .. lib_suffix, "wx_gtk3u_core-" .. lib_suffix, "wx_baseu_xml-" .. lib_suffix, "wx_baseu_net-" .. lib_suffix, "wx_baseu-" .. lib_suffix)
         end
     end)
 
-    -- #include <wx/wxprec.h>
-    -- #ifndef WX_PRECOMP
-    --     #include <wx/wx.h>
-    -- #endif
-
     on_test(function (package)
         assert(package:check_cxxsnippets({test = [[
-            #include <wx/wx.h>
+            #include <wx/wxprec.h>
+            #ifndef WX_PRECOMP
+                #include <wx/wx.h>
+            #endif
             #include "wx/app.h"
             #include "wx/cmdline.h"
             void test() {
