@@ -41,8 +41,7 @@
 // ----------------------------------------------------------------------------
 
 // Define a new application type, each program should derive a class from wxApp
-class MyApp : public wxApp
-{
+class MyApp : public wxApp {
 public:
     // override base class virtuals
     // ----------------------------
@@ -54,8 +53,7 @@ public:
 };
 
 // Define a new frame type: this is going to be our main frame
-class MyFrame : public wxFrame
-{
+class MyFrame : public wxFrame {
 public:
     // ctor(s)
     MyFrame(const wxString& title);
@@ -74,8 +72,7 @@ private:
 // ----------------------------------------------------------------------------
 
 // IDs for the controls and the menu commands
-enum
-{
+enum {
     // menu items
     Minimal_Quit = wxID_EXIT,
 
@@ -113,8 +110,7 @@ wxIMPLEMENT_APP(MyApp);
 // ----------------------------------------------------------------------------
 
 // 'Main program' equivalent: the program execution "starts" here
-bool MyApp::OnInit()
-{
+bool MyApp::OnInit() {
     // call the base class initialization method, currently it only parses a
     // few common command-line options but it could be do more in the future
     if ( !wxApp::OnInit() )
@@ -139,8 +135,7 @@ bool MyApp::OnInit()
 
 // frame constructor
 MyFrame::MyFrame(const wxString& title)
-       : wxFrame(nullptr, wxID_ANY, title)
-{
+       : wxFrame(nullptr, wxID_ANY, title) {
     // set the frame icon
     SetIcon(wxICON(sample));
 
@@ -180,24 +175,21 @@ MyFrame::MyFrame(const wxString& title)
 
 // event handlers
 
-void MyFrame::OnQuit(wxCommandEvent& WXUNUSED(event))
-{
+void MyFrame::OnQuit(wxCommandEvent& WXUNUSED(event)) {
     // true is to force the frame to close
     Close(true);
 }
 
-void MyFrame::OnAbout(wxCommandEvent& WXUNUSED(event))
-{
-    wxMessageBox(wxString::Format
-                 (
-                    "Welcome to %s!\n"
-                    "\n"
-                    "This is the minimal wxWidgets sample\n"
-                    "running under %s.",
-                    wxVERSION_STRING,
-                    wxGetOsDescription()
-                 ),
-                 "About wxWidgets minimal sample",
-                 wxOK | wxICON_INFORMATION,
-                 this);
+void MyFrame::OnAbout(wxCommandEvent& WXUNUSED(event)) {
+    wxMessageBox(wxString::Format(
+        "Welcome to %s!\n"
+        "\n"
+        "This is the minimal wxWidgets sample\n"
+        "running under %s.",
+        wxVERSION_STRING,
+        wxGetOsDescription()
+    ),
+    "About wxWidgets minimal sample",
+    wxOK | wxICON_INFORMATION,
+    this);
 }
