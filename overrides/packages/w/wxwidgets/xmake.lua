@@ -14,6 +14,7 @@ package("wxwidgets")
         add_versions("3.2.7", "69a1722f874d91cd1c9e742b72df49e0fab02890782cf794791c3104cee868c6")
         add_versions("3.2.8", "c74784904109d7229e6894c85cfa068f1106a4a07c144afd78af41f373ee0fe6")
         add_versions("3.3.0", "492f5eb8a58715f2602f31025c3eaa20d71a3ec8e052c7a9d33153966b4badca")
+        add_versions("3.3.1", "f936c8d694f9c49a367a376f99c751467150a4ed7cbf8f4723ef19b2d2d9998d")
 
         add_deps("cmake")
 
