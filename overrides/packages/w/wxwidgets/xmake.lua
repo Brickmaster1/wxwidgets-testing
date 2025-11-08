@@ -16,6 +16,8 @@ package("wxwidgets")
         add_versions("3.3.0", "492f5eb8a58715f2602f31025c3eaa20d71a3ec8e052c7a9d33153966b4badca")
         add_versions("3.3.1", "f936c8d694f9c49a367a376f99c751467150a4ed7cbf8f4723ef19b2d2d9998d")
 
+        add_patches("*", path.join(os.scriptdir(), "patches", "ubsan.patch"), "9f3b8db4c6c37a5f2372ebe0f7c6b74ec2d684a5d3e8d4c98844d0e56abc5418")
+
         add_deps("cmake")
 
         add_deps("zlib-ng", {configs = {zlib_compat = true}})

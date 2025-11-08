@@ -1,6 +1,6 @@
 set_project("libiconv")
 
-add_rules("mode.debug", "mode.release")
+add_rules("mode.debug", "mode.release", "set_language")
 
 set_configvar("PACKAGE", "libiconv")
 set_configvar("PACKAGE_NAME", "libiconv")
@@ -97,8 +97,22 @@ set_configvar("GNULIB_TEST_REALPATH", 1)
 set_configvar("GNULIB_TEST_SIGPROCMASK", 1)
 set_configvar("GNULIB_TEST_STAT", 1)
 set_configvar("GNULIB_TEST_STRERROR", 1)
-if not is_plat("android", "iphoneos") then
+option("have_ssize_t")
+    set_showmenu(false)
+    add_csnippets("ssize_t", [[#include <sys/types.h>
+void test() { ssize_t x = 0; }]])
+option_end()
+
+option("have_uid_t")
+    set_showmenu(false)
+    add_csnippets("uid_t", [[#include <sys/types.h>
+void test() { uid_t x = 0; }]])
+option_end()
+
+if not has_config("have_ssize_t") then
     set_configvar("ssize_t", "int", {quote = false})
+end
+if not has_config("have_uid_t") then
     set_configvar("uid_t", "int", {quote = false})
 end
 configvar_check_ctypes("USE_MBSTATE_T", "mbstate_t", {includes = "wchar.h", default = 0})
@@ -220,15 +234,26 @@ target("iconv")
     add_deps("charset", {inherit = false})
     add_defines("HAVE_CONFIG_H", "NO_XMALLOC", "IN_LIBRARY")
     if is_kind("shared") then
-        add_defines("BUILDING_LIBICONV", "BUILDING_DLL")
+        add_defines("BUILDING_LIBICONV", "BUILDING_DLL", "DLL_EXPORT")
     end
+    -- relocatable.c doesn't exists anymore from >= 1.16
+    on_load(function (target)
+        import("core.base.semver")
+
+        local ver = semver.new(get_config("vers"))
+        if ver:ge("1.16") then
+            target:add("files", "lib/compat.c")
+        else
+            target:add("files", "lib/relocatable.c")
+        end
+    end)
     set_configdir(".")
     set_configvar("DLL_VARIABLE", (is_plat("windows") and is_kind("shared")) and "__declspec(dllimport)" or "")
     add_configfiles("(include/iconv.h.build.in)", {filename = "iconv.h", pattern = "@(.-)@", variables = {EILSEQ = ""}})
     add_configfiles("(include/iconv.h.in)", {filename = "iconv.h.inst", pattern = "@(.-)@", variables = {EILSEQ = ""}})
     add_configfiles("(config.h.in)", {filename = "config.h"})
     add_includedirs(".", "lib", "include", "libcharset/include", {public = true})
-    add_files("lib/iconv.c", "lib/relocatable.c", "libcharset/lib/localcharset.c")
+    add_files("lib/iconv.c", "libcharset/lib/localcharset.c")
     after_install(function (target)
         os.cp("include/iconv.h.inst", path.join(target:installdir(), "include", "iconv.h"))
         for _, name in ipairs(os.files("po/*.gmo")) do
@@ -260,8 +285,20 @@ target("iconv_no_i18n")
     end
     add_files("src/iconv_no_i18n.c")
 
-    if is_plat("android", "iphoneos") then
+    if not is_plat("windows") then
         -- Gnulib defines these macros to 0 on GNU and other platforms that do not distinguish between text and binary I/O.
         -- https://www.gnu.org/software/gnulib/manual/html_node/fcntl_002eh.html
         add_defines("O_BINARY=0")
     end
+
+rule("set_language")
+    on_load(function (target)
+        import("core.base.semver")
+
+        local ver = semver.new(get_config("vers"))
+        if ver:ge("1.18") then
+            target:set("languages", "c23")
+        else
+            target:set("languages", "c99")
+        end
+    end)

@@ -1,0 +1,87 @@
+diff --git a/include/wx/defs.h b/include/wx/defs.h
+index 1da530796f..b48e6dff3f 100644
+--- a/include/wx/defs.h
++++ b/include/wx/defs.h
+@@ -288,6 +288,27 @@ typedef short int WXTYPE;
+     #define wxNODISCARD
+ #endif
+ 
++/* wxUSING_UBSAN is 1 if the undefined-behavior sanitizer is active,
++   wxUBSAN_COMPAT is an attribute macro to disable UBSan in a single spot
++   where it would otherwise crash the program */
++
++#undef wxUSING_UBSAN
++#undef wxUBSAN_COMPAT
++
++#if defined(__clang__) && WX_HAS_CLANG_FEATURE(undefined_behavior_sanitizer)
++#    define wxUSING_UBSAN 1
++#elif defined(__SANITIZE_UNDEFINED__)
++#    define wxUSING_UBSAN 1
++#else
++#    define wxUSING_UBSAN 0
++#endif
++
++#if wxUSING_UBSAN && (defined(__clang__) || defined(__GNUC__))
++#    define wxUBSAN_COMPAT __attribute__((no_sanitize("undefined")))
++#else
++#    define wxUBSAN_COMPAT
++#endif
++
+ /* wxWARN_UNUSED is used as an attribute to a class, stating that unused instances
+    should be warned about (in case such warnings are enabled in the first place) */
+ 
+diff --git a/include/wx/private/ubsan.h b/include/wx/private/ubsan.h
+new file mode 100644
+index 0000000000..87d074fbc3
+--- /dev/null
++++ b/include/wx/private/ubsan.h
+@@ -0,0 +1,27 @@
++///////////////////////////////////////////////////////////////////////////////
++// Name:        wx/private/ubsan.h
++// Purpose:     UBSan compatibility helpers
++// Author:      Logan Hunt
++// Created:     2025-09-07
++// Licence:     wxWindows licence
++///////////////////////////////////////////////////////////////////////////////
++
++#ifndef _WX_PRIVATE_UBSAN_H_
++#define _WX_PRIVATE_UBSAN_H_
++
++#include "wx/defs.h"
++
++#ifndef wxNO_UBSAN
++#  define wxNO_UBSAN
++#endif
++
++template<typename T, typename U>
++void wxSetNoUBSan(T& var, U value) wxNO_UBSAN;
++
++template<typename T, typename U>
++void wxSetNoUBSan(T& var, U value) wxNO_UBSAN
++{
++    var = static_cast<T>(value);
++}
++
++#endif // _WX_PRIVATE_UBSAN_H_
+diff --git a/src/msw/tooltip.cpp b/src/msw/tooltip.cpp
+index 7d8ff5aace..1287470928 100644
+--- a/src/msw/tooltip.cpp
++++ b/src/msw/tooltip.cpp
+@@ -35,6 +35,8 @@
+ #include "wx/msw/private.h"
+ #include "wx/msw/private/darkmode.h"
+ 
++#include "wx/private/ubsan.h"
++
+ #ifndef TTTOOLINFO_V1_SIZE
+     #define TTTOOLINFO_V1_SIZE 0x28
+ #endif
+@@ -88,7 +90,7 @@ class wxToolTipOtherWindows : public wxVector<WXHWND>
+ class wxToolInfo : public TOOLINFO
+ {
+ public:
+-    wxToolInfo(HWND hwndOwner, unsigned int id, const wxRect& rc)
++    wxToolInfo(HWND hwndOwner, unsigned int id, const wxRect& rc) wxUBSAN_COMPAT
+     {
+         // initialize all members
+         wxZeroMemory(*this);

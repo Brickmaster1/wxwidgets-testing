@@ -1,0 +1,96 @@
+diff --git a/src/cutout.py b/src/cutout.py
+index 6b465299..3f8c68ea 100644
+--- a/src/cutout.py
++++ b/src/cutout.py
+@@ -3,44 +3,65 @@ import subprocess
+ import json
+ import os
+ import re
++import sys
+ 
+-if __name__== '__main__':
+-    parser = argparse.ArgumentParser()
+-    parser.add_argument('input')
+-    parser.add_argument('output')
+-    parser.add_argument('buildroot')
++def main():
++    parser = argparse.ArgumentParser(description="Cut out sections of preprocessor output and canonicalize whitespace/commas.")
++    parser.add_argument('input', help='input filename (passed to the cpp invocation)')
++    parser.add_argument('output', help='output filename to write processed lines into')
++    parser.add_argument('buildroot', help='meson buildroot directory')
+ 
+-    args = parser.parse_known_args()
++    ns, unknown = parser.parse_known_args()
+ 
+-    # c_args might contain things that are essential for crosscompilation, but
+-    # are not included in cc.cmd_array(), so we have to look them up ourselves
++    # c_args might contain things that are essential for crosscompilation but
++    # are not included in cc.cmd_array(); we read them from meson-info/intro-buildoptions.json
+     host_cargs = []
+-    buildroot = args[0].buildroot
+-    with open(os.path.join(buildroot, 'meson-info', 'intro-buildoptions.json')) as json_file:
++    buildroot = ns.buildroot
++    intro_bopts = os.path.join(buildroot, 'meson-info', 'intro-buildoptions.json')
++    with open(intro_bopts, 'r', encoding='utf-8') as json_file:
+         bopts = json.load(json_file)
+         for opt in bopts:
+-            if opt['name'] == 'c_args' and opt['section'] == 'compiler' and opt['machine'] == 'host':
+-                host_cargs = opt['value']
++            if opt.get('name') == 'c_args' and opt.get('section') == 'compiler' and opt.get('machine') == 'host':
++                host_cargs = opt.get('value', [])
+                 break
+ 
+-    cpp = args[1]
+-    cpp_args = [i for i in host_cargs + [args[0].input] if not i.startswith('-g')]
+-    ret = subprocess.run(cpp + cpp_args, stdout=subprocess.PIPE, check=True)
++    cpp_cmd = unknown
++    cpp_args = [i for i in (host_cargs + [ns.input]) if not (isinstance(i, str) and i.startswith('-g'))]
+ 
+-    stdout = ret.stdout.decode('utf8')
++    if not cpp_cmd:
++        print("Error: no cpp command provided on the command line.", file=sys.stderr)
++        sys.exit(2)
++    try:
++        ret = subprocess.run(cpp_cmd + cpp_args, stdout=subprocess.PIPE, check=True)
++    except subprocess.CalledProcessError as e:
++        print("cpp invocation failed:", e, file=sys.stderr)
++        sys.exit(e.returncode)
+ 
+-    with open(args[0].output, 'w') as out:
++    stdout = ret.stdout.decode('utf-8', errors='replace')
++
++    re_leading = re.compile(r'^\s+')
++    re_commas = re.compile(r'\s*,\s*')
++
++    with open(ns.output, 'w', encoding='utf-8') as out:
+         write = True
+         for l in stdout.split('\n'):
+-            l = l.strip('\r')
+-            if l.startswith('CUT_OUT_BEGIN'):
++            l = l.rstrip('\r')
++            s = l.strip()
++            if s.startswith('CUT_OUT_BEGIN'):
+                 write = False
++                continue
++            if s.startswith('CUT_OUT_END'):
++                write = True
++                continue
+ 
+-            if write and l:
+-                stripped = re.sub('^\s+', '', l)
+-                stripped = re.sub('\s*,\s*', ',', stripped)
+-                if not stripped.isspace() and stripped:
+-                    out.write('%s\n' % stripped)
++            if not write or not l:
++                continue
+ 
+-            if l.startswith('CUT_OUT_END'):
+-                write = True
++            stripped = re_leading.sub('', l)
++            stripped = re_commas.sub(',', stripped)
++
++            if stripped.strip():
++                out.write(f"{stripped.rstrip()}\n")
++
++if __name__ == '__main__':
++    main()
